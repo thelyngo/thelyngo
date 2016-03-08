@@ -34,7 +34,7 @@ else if (_APP_ENV_ == 2) // PREPROD
     // website configuration
     define('_DEV_MODE_',            true);
     define('_CUR_THEME_',           'ultima');
-    define('_BASE_',                '/thelyngo');
+    define('_BASE_',                '');
 
     // db informations
     define('_DB_SERVER_',           'thelyngour1234.mysql.db');
@@ -55,7 +55,7 @@ else if (_APP_ENV_ == 3) // PROD
     // website configuration
     define('_DEV_MODE_',            false);
     define('_CUR_THEME_',           'ultima');
-    define('_BASE_',                '/thelyngo');
+    define('_BASE_',                '');
 
     // db informations
     define('_DB_SERVER_',           'thelyngour1234.mysql.db');

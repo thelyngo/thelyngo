@@ -15,8 +15,8 @@ class Mail
     private static $host = "smtp.gmail.com";
     private static $user = "thelyngo@gmail.com";
     private static $pass = "thelyngo1234";
-    private static $SMTPSecure = "tls";
-    private static $port = "587";
+    private static $SMTPSecure = "ssl";
+    private static $port = "465";
     private static $from = "thelyngo@gmail.com";
 
     /**

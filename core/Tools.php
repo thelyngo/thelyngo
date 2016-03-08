@@ -231,7 +231,12 @@ class Tools
     public static function redirect($route = null)
     {
         if ($route == null)
-            header('Location: '._BASE_);
+        {
+            if (_BASE_ == "")
+                header('Location: /');
+            else
+                header('Location: '._BASE_);
+        }
         else
             header('Location: '._BASE_.'/'.$route);
 

@@ -13,11 +13,11 @@
 class Mail
 {
     private static $host = "smtp.gmail.com";
-    private static $user = "jeanbonorly";
-    private static $pass = "testouille";
+    private static $user = "thelyngo@gmail.com";
+    private static $pass = "thelyngo1234";
     private static $SMTPSecure = "tls";
     private static $port = "587";
-    private static $from = "jeanbonorly@gmail.com";
+    private static $from = "thelyngo@gmail.com";
 
     /**
      * Send email

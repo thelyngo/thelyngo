@@ -52,8 +52,8 @@ class IndexController extends Controller
         {
             $to = "jsauvannet@gmail.com";
 
-            $params = array("name" => $form['name'], "email" => $form['email'], "message" => $form['message'], "images" => "http://192.168.0.10:8888" . _IMG_DIR_);
-            $mail = Mail::send('Nouveau message de HamzaTraduction', 'mail/contact', $params, 'HamzaTraduction', array($to));
+            $params = array("name" => $form['name'], "email" => $form['email'], "message" => $form['message'], "images" => "http://thelyngo.com" . _IMG_DIR_);
+            $mail = Mail::send('Nouveau message de thelyngo.com', 'mail/contact', $params, 'TheLyngo', array($to));
 
             if ($mail)
                 View::alert(Lang::trans('label.contact_ok'), 'success');
@@ -82,8 +82,8 @@ class IndexController extends Controller
             {
                 $to = "jsauvannet@gmail.com";
 
-                $params = array("email" => $form['email'], "images" => "http://192.168.0.10:8888" . _IMG_DIR_);
-                $mail = Mail::send('Nouvel inscrit à votre newsletter', 'mail/newsletter_subscriber', $params, 'HamzaTraduction', array($to, "http://192.168.0.10:8888" . _IMG_DIR_));
+                $params = array("email" => $form['email'], "images" => "http://thelyngo.com" . _IMG_DIR_);
+                $mail = Mail::send('Nouvel inscrit à votre newsletter', 'mail/newsletter_subscriber', $params, 'TheLyngo', array($to, "http://thelyngo.com" . _IMG_DIR_));
 
                 if ($mail)
                 {

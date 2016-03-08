@@ -1,8 +1,8 @@
 <!--Header-->
 <header class="stiky-header">
     <div class="container group">
-        <a class="logo" href="index.html"><img src="{$images}logo-dark.png" alt="HamzaTraduction"/></a>
-        <a class="logo-mobile" href="index.html"><img src="{$images}logo-mobile.png" alt="HamzaTraduction"/></a>
+        <a class="logo" href="{$base}/"><img src="{$images}logo-dark.png" alt="TheLyngo"/></a>
+        <a class="logo-mobile" href="{$base}/"><img src="{$images}logo-mobile.png" alt="TheLyngo"/></a>
         <div class="navi-toggle group">
             <span class="dot"></span><span class="line"></span>
             <span class="dot"></span><span class="line"></span>

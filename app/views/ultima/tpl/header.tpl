@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>HamzaTraduction</title>
+        <title>TheLyngo.com</title>
 
         <link rel="shortcut icon" href="{$base_theme}favicon.ico">
 

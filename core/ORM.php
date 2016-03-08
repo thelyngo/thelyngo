@@ -49,6 +49,9 @@ class ORM
 
     public static function persist($repository)
     {
+        if (self::$manager == null)
+            self::init();
+
         self::$manager->persist($repository);
     }
 

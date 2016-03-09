@@ -1,18 +1,31 @@
 <?php
 
-/*
-Pour voir les paramètres possibles (ex : /acme/(:1num)),
-consulter la méthode replaceRegex() de la classe Router.
-*/
-
 /**
     Index Controller
 */
+
 Route::add('/', 'Index');
+
 Route::add('/lang/(:alpha)', 'Index', 'choseLang', array('GET'));
 
+Route::add('/terms', 'Index', 'terms');
+
+Route::add('/auth/logout', 'Auth', 'logout');
+
 /**
-    API Controller
+    Admin Controller
 */
-Route::add('/api/test', 'Api', 'test', array('GET', 'POST', 'PUT'));
-Route::add('/api/test/(:num)', 'Api', 'test2', array('GET', 'POST', 'PUT'));
+
+/* index */
+Route::add('/admin', 'Admin', 'index');
+
+/* users */
+Route::add('/admin/user', 'Admin', 'getUsers');
+Route::add('/admin/user/add', 'Admin', 'addUser');
+Route::add('/admin/user/(:num)/edit', 'Admin', 'editUser');
+Route::add('/admin/user/(:num)/ban', 'Admin', 'banUser');
+Route::add('/admin/user/(:num)/unban', 'Admin', 'unbanUser');
+
+/* newslettrer */
+Route::add('/admin/newsletter/user', 'Admin', 'getNewsletterSubs');
+Route::add('/admin/newsletter/add', 'Admin', 'addNewsletter');

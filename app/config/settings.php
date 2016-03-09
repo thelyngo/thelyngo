@@ -13,7 +13,7 @@ if (_APP_ENV_ == 1) // DEV
     // website configuration
     define('_DEV_MODE_',            true);
     define('_CUR_THEME_',           'ultima');
-    define('_BASE_',                '/hamza/git/thelyngo/');
+    define('_BASE_',                '/hamza/git/thelyngo');
 
     // db informations
     define('_DB_SERVER_',           '127.0.0.1');

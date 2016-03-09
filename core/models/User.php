@@ -8,7 +8,7 @@
  */
 
 /**
- * @Entity(repositoryClass="UserRepository")
+ * @Entity
  * @Table(name="user")
  * @UniqueEntity("email")
  * @UniqueEntity("username")

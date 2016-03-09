@@ -3,10 +3,10 @@
 class IndexController extends Controller
 {
     /** @Override */
-    /*public function __construct($params)
+    public function __construct($params)
     {
-        parent::__construct($params);
-    }*/
+        Translations::loadHeader();
+    }
 
     public function indexAction()
     {
@@ -16,7 +16,7 @@ class IndexController extends Controller
             $this->manageSubsribeNewsletter();
         else if (Tools::isSubmit('contact'))
             $this->manageContact();
-        else if (Tools::isSubmit('login'))
+        else if (Tools::isSubmit('loginArea'))
             $this->manageLogin();
 
         View::assign('form', Auth::getActionForm());
@@ -32,15 +32,24 @@ class IndexController extends Controller
         else
         {
             Lang::loadLang(self::$params['params']['0']);
-            Tools::redirect();
+            Tools::redirectReferer();
         }
     }
 
     public function manageLogin()
     {
         $form = Tools::getPosts();
+        $fields = array('login', 'password');
 
-        ds($form);
+        if (Validate::isAllSet($form, $fields) && Validate::isCleanHtml($form))
+        {
+            if (Auth::login($form['login'], $form['password']))
+                Tools::redirect();
+            else
+                View::alert(Lang::trans('label.notif_connection_fail'), 'error');
+        }
+        else
+            View::alert(Lang::trans('label.notif_form_invalid'), 'error');
     }
 
     public function manageContact()
@@ -56,12 +65,12 @@ class IndexController extends Controller
             $mail = Mail::send('Nouveau message de thelyngo.com', 'mail/contact', $params, 'TheLyngo', array($to));
 
             if ($mail)
-                View::alert(Lang::trans('label.contact_ok'), 'success');
+                View::alert(Lang::trans('label.notif_contact_ok'), 'success');
             else
-                View::alert(Lang::trans('label.contact_fail'), 'error');
+                View::alert(Lang::trans('label.notif_contact_fail'), 'error');
         }
         else
-            View::alert(Lang::trans('label.contact_invalid'), 'error');
+            View::alert(Lang::trans('label.notif_form_invalid'), 'error');
     }
 
     public function manageSubsribeNewsletter()
@@ -76,7 +85,7 @@ class IndexController extends Controller
 
             //Récupère-t-on un subscriber pour l'email saisi ?
             if (Validate::isLoadedObject($subscriber))
-                View::alert(Lang::trans('label.subscriber_registration_exist'));
+                View::alert(Lang::trans('label.notif_subscriber_registration_exist'));
             //Non, on procède à l'enregistrement
             else
             {
@@ -94,13 +103,18 @@ class IndexController extends Controller
                     ORM::persist($subscriber);
                     ORM::flush();
 
-                    View::alert(Lang::trans('label.subscriber_registration_ok'), 'success');
+                    View::alert(Lang::trans('label.notif_subscriber_registration_ok'), 'success');
                 }
                 else
-                    View::alert(Lang::trans('label.subscriber_registration_fail'), 'error');
+                    View::alert(Lang::trans('label.notif_subscriber_registration_fail'), 'error');
             }
         }
         else
-            View::alert(Lang::trans('label.subscriber_registration_invalid'), 'error');
+            View::alert(Lang::trans('label.notif_subscriber_registration_invalid'), 'error');
+    }
+
+    public function termsAction()
+    {
+        return View::render("terms");
     }
 }

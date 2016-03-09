@@ -43,7 +43,7 @@ class Mail
         $mail->SMTPSecure = self::$SMTPSecure; // Enable TLS encryption, `ssl` also accepted
         $mail->Port = self::$port; // TCP port to connect to
 
-        $mail->FromName = $from;
+        $mail->setFrom = $from;
         foreach ($to as $name => $email) $mail->addAddress($email, $name);     // Add a recipient
         $mail->isHTML(true);                                  // Set email format to HTML
         $mail->Subject = utf8_decode($subject);

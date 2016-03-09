@@ -20,4 +20,4 @@
 
     <!--FOOTER-->
     <a name="newsletter"></a>
-    {include file="footer.tpl"}
+    {include file="footer_newsletter.tpl"}

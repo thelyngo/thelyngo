@@ -9,14 +9,14 @@
             <div class="modal-body">
                 <form method="post" class="login-form" role="form" action="{$form}">
                     <div class="form-group">
-                        <label for="username">{$str_form_username}</label>
-                        <input type="text" class="form-control" id="username" name="username" placeholder="{$str_form_username_ph}" required>
+                        <label for="login">{$str_form_username}</label>
+                        <input type="text" class="form-control" id="login" name="login" placeholder="{$str_form_username_ph}" required>
                     </div>
                     <div class="form-group">
                         <label for="password">{$str_form_password}</label>
                         <input type="password" class="form-control" id="password" name="password" placeholder="{$str_form_password_ph}" required>
                     </div>
-                    <button type="submit" class="btn btn-primary" name="login">{$str_menu_btn_login}</button>
+                    <button type="submit" class="btn btn-primary" name="loginArea">{$str_menu_btn_login}</button>
                 </form>
             </div>
         </div><!-- /.modal-content -->

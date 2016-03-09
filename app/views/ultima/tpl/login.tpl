@@ -9,8 +9,8 @@
             <div class="modal-body">
                 <form method="post" class="login-form" role="form" action="{$form}">
                     <div class="form-group">
-                        <label for="login">{$str_form_username}</label>
-                        <input type="text" class="form-control" id="login" name="login" placeholder="{$str_form_username_ph}" required>
+                        <label for="login">{$str_form_email}</label>
+                        <input type="text" class="form-control" id="login" name="login" placeholder="{$str_form_email_ph}" required>
                     </div>
                     <div class="form-group">
                         <label for="password">{$str_form_password}</label>

@@ -4,7 +4,7 @@ $trans = array();
 
 $trans['fr']['label.subscriber_registration_exist'] = 'Cet email est déjà inscrit.';
 $trans['fr']['label.subscriber_registration_ok'] = 'Félicitations. Vous êtes désormais inscrit à notre newsletter.';
-$trans['fr']['label.subscriber_registration_fail'] = "Une erreur est survenue lors de l'enregistrement de votre adresse email. Opération annulée.";
+$trans['fr']['label.subscriber_registration_fail'] = "Désolé mais votre inscription à notre newsletter n'a pas pu se faire pour des raisons techniques.";
 $trans['fr']['label.subscriber_registration_invalid'] = "L'adresse email saisie est invalide.";
 
 $trans['fr']['label.contact_ok'] = "Votre message a bien été envoyé.";

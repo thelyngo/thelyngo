@@ -4,7 +4,7 @@
     app configuration
 */
 define('_APP_MAINTENANCE_',         false);
-define('_APP_ENV_',                 2); // 1: DEV, 2: PREPROD, 3: PROD
+define('_APP_ENV_',                 1); // 1: DEV, 2: PREPROD, 3: PROD
 define('_APP_NAME_',                'TheLyngo');
 define('_APP_DEFAULT_LANG_',        'fr'); //fr, en, es etc.
 
@@ -13,7 +13,7 @@ if (_APP_ENV_ == 1) // DEV
     // website configuration
     define('_DEV_MODE_',            true);
     define('_CUR_THEME_',           'ultima');
-    define('_BASE_',                '/hamza/site');
+    define('_BASE_',                '/hamza/git/thelyngo/');
 
     // db informations
     define('_DB_SERVER_',           '127.0.0.1');

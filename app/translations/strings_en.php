@@ -4,7 +4,7 @@ $trans = array();
 
 $trans['en']['label.subscriber_registration_exist'] = 'Email is already registered.';
 $trans['en']['label.subscriber_registration_ok'] = 'Congratulations. You are now subscribed to our newsletter.';
-$trans['en']['label.subscriber_registration_fail'] = "An error occured while subscribing your email to our newsletter.";
+$trans['en']['label.subscriber_registration_fail'] = "Sorry but an error occured due to technical issue while subscribing your email to our newsletter.";
 $trans['en']['label.subscriber_registration_invalid'] = "Email is invalid.";
 
 $trans['en']['label.contact_ok'] = "Your message has been sent.";

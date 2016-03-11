@@ -30,8 +30,19 @@ class Lang
         $_SESSION["locale"] = $langKey;
     }
 
-    public static function trans($key, $params = array())
+    public static function trans($paramKey, $params = array())
     {
+        //Traduction depuis un tpl smarty
+        if (is_array($paramKey))
+        {
+            $key = "label." . $paramKey["s"];
+            //Pas trouvé d'autres alternatives que de forcer le params à un array vide sinon on reçoit
+            //un tableau de params du SmartyLazyRegister qui fait planter le foreach
+            $params = array();
+        }
+        else
+            $key = $paramKey;
+
         $lang = isset($_SESSION["locale"]) ? $_SESSION["locale"] : _APP_DEFAULT_LANG_;
 
         if (file_exists(_TRANSLATIONS_DIR_.'strings_' . $lang . '.php'))

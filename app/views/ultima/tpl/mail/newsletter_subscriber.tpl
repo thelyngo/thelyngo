@@ -7,7 +7,7 @@
     <meta name="viewport" content="initial-scale=1.0">    <!-- So that mobile webkit will display zoomed in -->
     <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
 
-    <title>TheLyngo.com - Newsletter</title>
+    <title>TheLyngo.com</title>
     <style type="text/css">
 
 {literal}
@@ -97,11 +97,9 @@
     </tr>
     <tr>
         <td class="container-padding" bgcolor="#ffffff" style="background-color: #ffffff; padding-left: 30px; padding-right: 30px; font-size: 13px; line-height: 20px; font-family: Helvetica, sans-serif; color: #333;" align="left">
-            Bonjour !
+            {trans s="str_mail_newsletter_sub_1"}
             <br/><br/>
-            Vous avez un nouvel inscrit à votre newsletter : <span style='font-weight:bold;'>{$email}</span>
-            <br/><br/>
-            Les vrais reconnaissent les vrais.
+            {trans s="str_mail_newsletter_sub_2"} <span style='font-weight:bold;'>{$email}</span>
             <!-- ### END CONTENT ### -->
             <br><br>
 

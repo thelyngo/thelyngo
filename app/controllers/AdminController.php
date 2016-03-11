@@ -8,8 +8,8 @@ class AdminController extends Controller
         if (!Auth::user() || !Auth::checkMemberRole(_USER_ROLE_ADMIN_))
             die(raise('404'));
 
-        Translations::loadHeader();
-        Translations::loadAdminMenu();
+        //N'a pas sa place ici
+        View::assign("str_menu_languages", Lang::getLanguages());
     }
 
     public function indexAction()
@@ -19,8 +19,6 @@ class AdminController extends Controller
 
     public function getUsersAction()
     {
-        Translations::loadUsers();
-
         $repoUser = ORM::get("User");
 
         //On peut findAll car ce site n'est pas censé avoir beaucoup d'utilisateurs
@@ -32,7 +30,6 @@ class AdminController extends Controller
 
     public function banUserAction()
     {
-        Translations::loadUsers();
         $repoUser = ORM::get("User");
 
         if (isset(self::$params['params']['0']) && Validate::isLoadedObject($repoUser->findOneBy(array('id' => (int)self::$params['params']['0']))))
@@ -57,7 +54,6 @@ class AdminController extends Controller
 
     public function unbanUserAction()
     {
-        Translations::loadUsers();
         $repoUser = ORM::get("User");
 
         if (isset(self::$params['params']['0']) && Validate::isLoadedObject($repoUser->findOneBy(array('id' => (int)self::$params['params']['0']))))
@@ -78,8 +74,6 @@ class AdminController extends Controller
 
     public function addUserAction()
     {
-        Translations::loadUserAdd();
-
         $repoUser = ORM::get("User");
 
         if (Tools::isSubmit("addUser"))
@@ -112,8 +106,6 @@ class AdminController extends Controller
 
     public function editUserAction()
     {
-        Translations::loadUserEdit();
-
         $repoUser = ORM::get("User");
         $repoRole = ORM::get("UserRole");
 
@@ -131,7 +123,6 @@ class AdminController extends Controller
 
         if (Tools::isSubmit("editUser"))
         {
-
             $form = Tools::getPosts();
             $fields = array('username', 'email', 'role_id');
 
@@ -195,8 +186,6 @@ class AdminController extends Controller
 
     public function getNewsletterSubsAction()
     {
-        Translations::loadNewsletterSubs();
-
         $repoSubs = ORM::get("NewsletterSub");
 
         $users = $repoSubs->findBy(array(), array('created_at' => 'DESC'), 50);
@@ -205,9 +194,43 @@ class AdminController extends Controller
         return View::render('admin/admin_newsletter_subs');
     }
 
-    public function addNewsletterAction()
+    public function changePasswordAction()
     {
+        View::assign('form', Auth::getActionForm());
 
-        return View::render('admin/admin_newsletter_add');
+        if (Tools::isSubmit("changePassword"))
+        {
+            $form = Tools::getPosts();
+            $fields = array('actual_password', 'password', 'password2');
+
+            if (Validate::isAllSet($form, $fields) && Validate::isCleanHtml($form))
+            {
+                $password = hash(_USER_CRYPT_, $form["actual_password"].Auth::user()->getSalt()._APP_SALT_);
+
+                if ($form["password"] != $form["password2"])
+                {
+                    View::alert(Lang::trans('label.notif_form_password_dont_match'), 'error');
+                    return View::render('admin/admin_change_password');
+                }
+                else if (Auth::user()->getPassword() != $password)
+                {
+                    View::alert(Lang::trans('label.notif_form_password_incorrect'), 'error');
+                    return View::render('admin/admin_change_password');
+                }
+                else
+                {
+                    Auth::user()->setPassword(hash(_USER_CRYPT_, $form["password"].Auth::user()->getSalt()._APP_SALT_));
+
+                    ORM::persist(Auth::user());
+                    ORM::flush();
+
+                    Tools::redirect('auth/logout');
+                }
+            }
+            else
+                View::alert(Lang::trans('label.notif_form_invalid'), 'error');
+        }
+
+        return View::render('admin/admin_change_password');
     }
 }

@@ -1,0 +1,25 @@
+#allow from all
+
+RedirectMatch 404 /\.git
+
+RedirectMatch 404 /app/controllers
+RedirectMatch 404 /app/models
+RedirectMatch 404 /app/config
+RedirectMatch 404 /config
+
+<IfModule mod_rewrite.c>
+
+    Options +FollowSymLinks
+
+    <IfModule mod_env.c>
+        SetEnv HTTP_MOD_REWRITE On
+    </IfModule>
+
+    RewriteEngine on
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !index.php
+    RewriteRule ^(.*)$ index.php?url=$1 [L]
+
+</IfModule>

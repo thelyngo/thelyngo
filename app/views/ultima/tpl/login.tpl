@@ -4,19 +4,19 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">{$str_menu_btn_login}</h4>
+                <h4 class="modal-title">{trans s="str_menu_btn_login"}</h4>
             </div>
             <div class="modal-body">
                 <form method="post" class="login-form" role="form" action="{$form}">
                     <div class="form-group">
-                        <label for="login">{$str_form_email}</label>
-                        <input type="text" class="form-control" id="login" name="login" placeholder="{$str_form_email_ph}" required>
+                        <label for="login">{trans s="str_form_email"}</label>
+                        <input type="text" class="form-control" id="login" name="login" placeholder="{trans s='str_form_email_ph'}" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">{$str_form_password}</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="{$str_form_password_ph}" required>
+                        <label for="password">{trans s="str_form_password"}</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="{trans s='str_form_password_ph'}" required>
                     </div>
-                    <button type="submit" class="btn btn-primary" name="loginArea">{$str_menu_btn_login}</button>
+                    <button type="submit" class="btn btn-primary" name="loginArea">{trans s="str_menu_btn_login"}</button>
                 </form>
             </div>
         </div><!-- /.modal-content -->

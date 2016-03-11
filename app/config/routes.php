@@ -25,7 +25,7 @@ Route::add('/admin/user/add', 'Admin', 'addUser');
 Route::add('/admin/user/(:num)/edit', 'Admin', 'editUser');
 Route::add('/admin/user/(:num)/ban', 'Admin', 'banUser');
 Route::add('/admin/user/(:num)/unban', 'Admin', 'unbanUser');
+Route::add('/admin/password/change', 'Admin', 'changePassword');
 
 /* newslettrer */
 Route::add('/admin/newsletter/user', 'Admin', 'getNewsletterSubs');
-Route::add('/admin/newsletter/add', 'Admin', 'addNewsletter');

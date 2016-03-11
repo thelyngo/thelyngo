@@ -36,9 +36,6 @@ class ORM
 
     public static function getRepository($repository)
     {
-        if (self::$manager == null)
-            self::init();
-
         return self::$manager->getRepository($repository);
     }
 
@@ -49,9 +46,6 @@ class ORM
 
     public static function persist($repository)
     {
-        if (self::$manager == null)
-            self::init();
-
         self::$manager->persist($repository);
     }
 

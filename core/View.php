@@ -31,11 +31,31 @@ class View
         self::assign("images", _IMG_DIR_);
         self::assign("upload_base", _UPLOAD_DIR_BASE_);
         self::assign("upload", _UPLOAD_DIR_);
+        self::assignFunc('function', 'trans', array('Lang', 'trans'));
     }
 
     public static function assign($name, $value)
     {
         self::$smarty->assign($name, $value);
+    }
+
+    public static function assignFunc($type, $function, $params, $lazy = true)
+    {
+        if (!in_array($type, array('function', 'modifier', 'block')))
+            return false;
+        // lazy is better if the function is not called on every page
+        if ($lazy)
+        {
+            $lazy_register = SmartyLazyRegister::getInstance();
+            $lazy_register->register($params);
+
+            if (is_array($params))
+                $params = $params[1];
+            // SmartyLazyRegister allows to only load external class when they are needed
+            self::$smarty->registerPlugin($type, $function, array($lazy_register, $params));
+        }
+        else
+            self::$smarty->registerPlugin($type, $function, $params);
     }
 
     public static function assignArray($params)

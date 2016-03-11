@@ -7,7 +7,7 @@
     <meta name="viewport" content="initial-scale=1.0">    <!-- So that mobile webkit will display zoomed in -->
     <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
 
-    <title>TheLyngo.com - Contact</title>
+    <title>TheLyngo.com</title>
     <style type="text/css">
 
 {literal}
@@ -97,9 +97,9 @@
     </tr>
     <tr>
         <td class="container-padding" bgcolor="#ffffff" style="background-color: #ffffff; padding-left: 30px; padding-right: 30px; font-size: 13px; line-height: 20px; font-family: Helvetica, sans-serif; color: #333;" align="left">
-            Bonjour !
+            {trans s="str_mail_contact_1"}
             <br/><br/>
-            Vous avez reçu un nouveau message depuis le formulaire de contact de votre site de <span style='font-weight:bold;'>{$name}</span> (<span style='font-weight:bold;'>{$email}</span>)
+            {trans s="str_mail_contact_2"} <span style='font-weight:bold;'>{$name}</span> (<span style='font-weight:bold;'>{$email}</span>)
             <br/><br/>
             {$message}
             <!-- ### END CONTENT ### -->

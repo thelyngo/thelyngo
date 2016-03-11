@@ -38,6 +38,8 @@ $trans['fr']['label.str_form_username'] = "Nom d'utilisateur";
 $trans['fr']['label.str_form_username_ph'] = "Saisissez votre nom d'utilisateur";
 $trans['fr']['label.str_form_password'] = "Mot de passe";
 $trans['fr']['label.str_form_password_ph'] = "Saisissez votre mot de passe";
+$trans['fr']['label.str_form_actual_password'] = "Mot de passe actuel";
+$trans['fr']['label.str_form_actual_password_ph'] = "Saisissez votre mot de passe actuel";
 $trans['fr']['label.notif_connection_fail'] = "Le couple identifiant/mot de passe n'est pas reconnue.";
 $trans['fr']['label.notif_form_username_invalid'] = "Le nom d'utilisateur est invalide. (Utiliser uniquement des lettres et compris entre 3 et 15 caractères)";
 $trans['fr']['label.notif_form_username_already_used'] = "Ce nom d'utilisateur est déjà utilisé. Merci d'en choisir un autre.";
@@ -84,3 +86,13 @@ $trans['fr']['label.str_admin_user_active_account'] = "Activer/Desactiver le com
 $trans['fr']['label.str_admin_newsletter_user_title'] = "Liste des 50 derniers inscrits à la newsletter de Thelingo:";
 $trans['fr']['label.str_form_subscribe_at'] = "Inscrit le";
 $trans['fr']['label.str_admin_newsletter_no_data'] = "Aucun utilisateur n'est inscrit à la newsletter.";
+/* admin password */
+$trans['fr']['label.str_admin_change_password'] = "Changer mon mot de passe";
+$trans['fr']['label.notif_form_password_incorrect'] = "Mot de passe incorrect.";
+/* mail */
+$trans['fr']['label.str_mail_contact_1'] = "Bonjour !";
+$trans['fr']['label.str_mail_contact_2'] = "Vous avez reçu un nouveau message depuis le formulaire de contact de votre site de";
+$trans['fr']['label.str_mail_newsletter_sub_1'] = "Bonjour !";
+$trans['fr']['label.str_mail_newsletter_sub_2'] = "Vous avez un nouvel inscrit à votre newsletter :";
+$trans['fr']['label.str_mail_contact_subject'] = "Nouveau message de TheLyngo";
+$trans['fr']['label.str_mail_newsletter_subject'] = "Nouvel inscrit à la newsletter TheLyngo";

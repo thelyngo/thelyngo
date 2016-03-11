@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <p class="copyright">&copy; {'Y'|date} TheLyngo. {$str_copyrigth}.</p>
+                        <p class="copyright">&copy; {'Y'|date} TheLyngo. {trans s="str_copyrigth"}</p>
                     </div>
                 </div>
             </div>

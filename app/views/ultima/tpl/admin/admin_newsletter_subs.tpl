@@ -13,13 +13,13 @@
     <div class="container">
         <div class="row">
             <hr/>
-            <h3 class="cs-heading" align="center">{$str_admin_newsletter_user_title}</h3>
+            <h3 class="cs-heading" align="center">{trans s="str_admin_newsletter_user_title"}</h3>
 
             <table class="table-striped">
                 <tr>
                     <th>#</th>
-                    <th>{$str_form_email}</th>
-                    <th>{$str_form_subscribe_at}</th>
+                    <th>{trans s="str_form_email"}</th>
+                    <th>{trans s="str_form_subscribe_at"}</th>
                 </tr>
                 {if isset($users) && $users|@count gt 0}
                 {foreach from=$users item=item name="tabUsers"}
@@ -31,7 +31,7 @@
                 {/foreach}
                 {else}
                 <tr>
-                    <td colspan="3">{$str_admin_newsletter_no_data}</td>
+                    <td colspan="3">{trans s="str_admin_newsletter_no_data"}</td>
                 </tr>
                 {/if}
             </table>

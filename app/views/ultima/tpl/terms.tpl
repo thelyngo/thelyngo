@@ -7,4 +7,8 @@
     <!--MENU-->
     {include file="menu.tpl"}
 
-    <h3>Mentions légales à venir...</h3>
+    <div class="container">
+        <div class="row">
+            <h3>A venir...</h3>
+        </div>
+    </div>

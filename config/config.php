@@ -12,6 +12,7 @@
     Constants & debug mode
 */
 require_once dirname(__FILE__).'/defines.php';
+require_once dirname(__FILE__).'/smarty-lazy-register.php';
 
 if (_DEV_MODE_)
 {
@@ -103,6 +104,7 @@ function biskotShutdownHandler()
 /**
     Init functions
 */
+ORM::init();
 Auth::init();
 View::init();
 Lang::loadLang();

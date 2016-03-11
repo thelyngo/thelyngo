@@ -5,13 +5,12 @@ class IndexController extends Controller
     /** @Override */
     public function __construct($params)
     {
-        Translations::loadHeader();
+        //N'a pas sa place ici
+        View::assign("str_menu_languages", Lang::getLanguages());
     }
 
     public function indexAction()
     {
-        Translations::loadIndex();
-
         if (Tools::isSubmit('subscriberNewsletter'))
             $this->manageSubsribeNewsletter();
         else if (Tools::isSubmit('contact'))
@@ -44,7 +43,7 @@ class IndexController extends Controller
         if (Validate::isAllSet($form, $fields) && Validate::isCleanHtml($form))
         {
             if (Auth::login($form['login'], $form['password']))
-                Tools::redirect();
+                Tools::redirect("admin/");
             else
                 View::alert(Lang::trans('label.notif_connection_fail'), 'error');
         }
@@ -62,7 +61,7 @@ class IndexController extends Controller
             $to = "jsauvannet@gmail.com";
 
             $params = array("name" => $form['name'], "email" => $form['email'], "message" => $form['message'], "images" => "http://thelyngo.com" . _IMG_DIR_);
-            $mail = Mail::send('Nouveau message de thelyngo.com', 'mail/contact', $params, 'TheLyngo', array($to));
+            $mail = Mail::send(Lang::trans('label.str_mail_contact_subject'), 'mail/contact', $params, array('TheLyngo' => "contact@thelyngo.com"), array($to));
 
             if ($mail)
                 View::alert(Lang::trans('label.notif_contact_ok'), 'success');
@@ -92,7 +91,7 @@ class IndexController extends Controller
                 $to = "jsauvannet@gmail.com";
 
                 $params = array("email" => $form['email'], "images" => "http://thelyngo.com" . _IMG_DIR_);
-                $mail = Mail::send('Nouvel inscrit à votre newsletter', 'mail/newsletter_subscriber', $params, 'TheLyngo', array($to, "http://thelyngo.com" . _IMG_DIR_));
+                $mail = Mail::send(Lang::trans('label.str_mail_newsletter_subject'), 'mail/newsletter_subscriber', $params, array('TheLyngo' => "contact@thelyngo.com"), array($to, "http://thelyngo.com" . _IMG_DIR_));
 
                 if ($mail)
                 {

@@ -38,6 +38,8 @@ $trans['en']['label.str_form_username'] = "Username";
 $trans['en']['label.str_form_username_ph'] = "Enter your username";
 $trans['en']['label.str_form_password'] = "Password";
 $trans['en']['label.str_form_password_ph'] = "Enter your password";
+$trans['en']['label.str_form_actual_password'] = "Actual password";
+$trans['en']['label.str_form_actual_password_ph'] = "Enter your actual password";
 $trans['en']['label.notif_connection_fail'] = "Couple username/password unrecognized.";
 $trans['en']['label.notif_form_username_invalid'] = "Username invalid. (Only letters expected and between 3 and 15 caracters.)";
 $trans['en']['label.notif_form_username_already_used'] = "Username already used. Please chose another one.";
@@ -84,3 +86,13 @@ $trans['en']['label.str_admin_user_active_account'] = "Enable/Disable user accou
 $trans['en']['label.str_admin_newsletter_user_title'] = "List of 50 last newsletter's subscribers:";
 $trans['en']['label.str_form_subscribe_at'] = "Subscribed at";
 $trans['en']['label.str_admin_newsletter_no_data'] = "No subscribers found.";
+/* admin password */
+$trans['en']['label.str_admin_change_password'] = "Change my password";
+$trans['en']['label.notif_form_password_incorrect'] = "Incorrect password.";
+/* mail */
+$trans['en']['label.str_mail_contact_1'] = "Hi !";
+$trans['en']['label.str_mail_contact_2'] = "You have received a new message from :";
+$trans['en']['label.str_mail_newsletter_sub_1'] = "Hi !";
+$trans['en']['label.str_mail_newsletter_sub_2'] = "You have a new newsletter's subscriber :";
+$trans['en']['label.str_mail_contact_subject'] = "New message from TheLyngo";
+$trans['en']['label.str_mail_newsletter_subject'] = "New newsletter subscriber TheLyngo";

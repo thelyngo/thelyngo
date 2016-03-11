@@ -61,7 +61,7 @@ class IndexController extends Controller
             $to = "jsauvannet@gmail.com";
 
             $params = array("name" => $form['name'], "email" => $form['email'], "message" => $form['message'], "images" => _APP_URL_ . _IMG_DIR_);
-            $mail = Mail::send(Lang::trans('label.str_mail_contact_subject'), 'mail/contact', $params, array('TheLyngo' => "contact@thelyngo.com"), array($to));
+            $mail = Mail::send(Lang::trans('label.str_mail_contact_subject'), 'mail/contact', $params, array('TheLyngo', "contact@thelyngo.com"), array($to));
 
             if ($mail)
                 View::alert(Lang::trans('label.notif_contact_ok'), 'success');
@@ -91,7 +91,7 @@ class IndexController extends Controller
                 $to = "jsauvannet@gmail.com";
 
                 $params = array("email" => $form['email'], "images" => "http://thelyngo.com" . _IMG_DIR_);
-                $mail = Mail::send(Lang::trans('label.str_mail_newsletter_subject'), 'mail/newsletter_subscriber', $params, array('TheLyngo' => "contact@thelyngo.com"), array($to, _APP_URL_ . _IMG_DIR_));
+                $mail = Mail::send(Lang::trans('label.str_mail_newsletter_subject'), 'mail/newsletter_subscriber', $params, array('TheLyngo', "contact@thelyngo.com"), array($to, _APP_URL_ . _IMG_DIR_));
 
                 if ($mail)
                 {

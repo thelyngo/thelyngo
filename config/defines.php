@@ -17,7 +17,6 @@ require_once dirname(__FILE__).'/../app/config/settings.php';
     app configuration
 */
 define('_APP_SALT_',                '185156f135ds1fvs1dgfzefdsf21e');
-
 /**
     path informations
 */

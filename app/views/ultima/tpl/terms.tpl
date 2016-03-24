@@ -1,10 +1,7 @@
-    <!--THELYNGO TOP-->
     {include file="header.tpl"}
 
-    <!--LOGIN AREA-->
     {include file="login.tpl"}
 
-    <!--MENU-->
     {include file="menu.tpl"}
 
     <div class="row">

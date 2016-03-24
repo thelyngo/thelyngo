@@ -5,12 +5,12 @@
     <head>
         <meta charset="utf-8">
 
-        <title>TheLyngo.com</title>
+        <title>TheLyngo Traduction</title>
 
         <link rel="shortcut icon" href="{$base_theme}favicon.ico">
 
-        <meta name="description" content="Site de traduction"/>
-        <meta name="keywords" content="traduction, traduire, votre site, web, page,"/>
+        <meta name="description" content="Site de traduction Anglais, Français, Italien, Espagnol"/>
+        <meta name="keywords" content="traduction, traduire, votre site, web, page, translate, english, french, traducteur, anglais, français"/>
         <meta name="author" content="Julien SAUVANNET"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 

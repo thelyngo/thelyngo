@@ -1,4 +1,4 @@
-    <!--HEADER-->
+    <!--THELYNGO TOP-->
     {include file="header.tpl"}
 
     <!--LOGIN AREA-->
@@ -14,7 +14,7 @@
         <div class="row">
             <hr/>
             <h3 class="cs-heading" align="center">{trans s="str_admin_user_edit"} {$userEdit->getUsername()}:</h3>
-            <form role="form" method="post" action="{$form}">
+            <form method="post" action="{$form}">
                 <div class="form-group">
                     <label for="username">{trans s="str_form_username"}</label>
                     <input type="text" class="form-control" id="username" name="username" placeholder="{trans s='str_form_username_ph'}" value="{$userEdit->getUsername()}" required>

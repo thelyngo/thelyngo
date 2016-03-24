@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * BISKOT - Micro PHP Framework
+ *
+ * @author     Toast Games
+ * @copyright  2016 Toast Games <http://toast-games.com>
+ * @version    Biskot 0.3
+ */
 $trans = array();
 
 /* newsletter */
@@ -96,3 +102,7 @@ $trans['en']['label.str_mail_newsletter_sub_1'] = "Hi !";
 $trans['en']['label.str_mail_newsletter_sub_2'] = "You have a new newsletter's subscriber :";
 $trans['en']['label.str_mail_contact_subject'] = "New message from TheLyngo";
 $trans['en']['label.str_mail_newsletter_subject'] = "New newsletter subscriber TheLyngo";
+/* header */
+$trans['en']['label.str_header_cookie_consent_content'] = "By continuing to use this website you are giving consent to cookies being used. For information on cookies, visit our terms and cookie policy.";
+$trans['en']['label.str_header_cookie_consent_accept'] = "I Accept.";
+$trans['en']['label.str_header_cookie_consent_more'] = "Know more.";

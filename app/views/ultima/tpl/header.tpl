@@ -32,6 +32,13 @@
         <link href="{$css}toastr.css" rel="stylesheet" media="screen">
         <!--Color Schemes-->
         <link class="color-scheme" href="{$css}colors/color-default.css" rel="stylesheet" media="screen">
+
+        <!--Override path spinner and checkbox-->
+        <style type="text/css">
+            #spinner { background: url({$images}spinner.GIF) no-repeat; }
+            .icheckbox { background:url({$images}forms/checkbox.png) no-repeat; }
+        </style>
+
         <!--Modernizr-->
         <script src="{$js}/libs/modernizr.custom.js"></script>
         <!--Adding Media Queries and Canvas Support for IE8-->
@@ -59,12 +66,6 @@
 
     <!--Body-->
     <body class="space-top">
-
-    <!--Override path css-->
-    <style type="text/css">
-        #spinner { background: url({$images}spinner.GIF) no-repeat; }
-        .icheckbox { background:url({$images}forms/checkbox.png) no-repeat; }
-    </style>
 
     <!--Page Preloading-->
     <div id="preloader"><div id="spinner"></div></div>

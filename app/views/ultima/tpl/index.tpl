@@ -1,4 +1,4 @@
-    <!--HEADER-->
+    <!--THELYNGO TOP-->
     {include file="header.tpl"}
 
     <!--LOGIN AREA-->
@@ -11,13 +11,13 @@
     {include file="slider.tpl"}
 
     <!--PRICES-->
-    <a name="prices"></a>
+    <a id="prices"></a>
     {include file="prices.tpl"}
 
     <!--CONTACT-->
-    <a name="contact"></a>
+    <a id="contact"></a>
     {include file="contact.tpl"}
 
     <!--FOOTER-->
-    <a name="newsletter"></a>
+    <a id="newsletter"></a>
     {include file="footer_newsletter.tpl"}

@@ -166,6 +166,7 @@ class AdminController extends Controller
                 }
 
                 $user->setUsername($form['username']);
+                $user->setUsernameSlug(Tools::str2url($form['username']));
                 $user->setEmail($form['email']);
                 $user->setRole($role);
                 $user->setIsActivated(isset($form['is_activated']) ? $form['is_activated'] : 0);

@@ -13,7 +13,7 @@ class IndexController extends Controller
     {
         if (Tools::isSubmit('subscriberNewsletter'))
             $this->manageSubsribeNewsletter();
-        else if (Tools::isSubmit('contact'))
+        else if (Tools::isSubmit('contactForm'))
             $this->manageContact();
         else if (Tools::isSubmit('loginArea'))
             $this->manageLogin();
@@ -54,13 +54,13 @@ class IndexController extends Controller
     public function manageContact()
     {
         $form = Tools::getPosts();
-        $fields = array('name', 'email', 'message');
+        $fields = array('contactName', 'contactEmail', 'contactMessage');
         //On récupère et on test l'email du mot de passe oublié
         if (Validate::isAllSet($form, $fields) && Validate::isCleanHtml($form))
         {
             $to = "jsauvannet@gmail.com";
 
-            $params = array("name" => $form['name'], "email" => $form['email'], "message" => $form['message'], "images" => _APP_URL_ . _IMG_DIR_);
+            $params = array("name" => $form['contactName'], "email" => $form['contactEmail'], "message" => $form['contactMessage'], "images" => _APP_URL_ . _IMG_DIR_);
             $mail = Mail::send(Lang::trans('label.str_mail_contact_subject'), 'mail/contact', $params, array('TheLyngo', "contact@thelyngo.com"), array($to));
 
             if ($mail)
@@ -114,6 +114,11 @@ class IndexController extends Controller
 
     public function termsAction()
     {
+        if (Tools::isSubmit('loginArea'))
+            $this->manageLogin();
+
+        View::assign('form', Auth::getActionForm());
+
         return View::render("terms");
     }
 }

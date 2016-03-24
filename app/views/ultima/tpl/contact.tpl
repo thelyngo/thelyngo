@@ -59,20 +59,20 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <form method="post" class="feedback-form ajax-form" role="form" action="{$form}">
+                            <form method="post" class="feedback-form ajax-form" action="{$form}">
                                 <div class="form-group">
-                                    <label class="sr-only" for="name">Name</label>
-                                    <input type="text" class="form-control" name="name" id="name" placeholder="Nom">
+                                    <label class="sr-only" for="contactName">Name</label>
+                                    <input type="text" class="form-control" name="contactName" id="contactName" placeholder="Nom">
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="email">Email</label>
-                                    <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                                    <label class="sr-only" for="contactEmail">Email</label>
+                                    <input type="text" class="form-control" name="contactEmail" id="contactEmail" placeholder="Email">
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="message">Message</label>
-                                    <textarea class="form-control" name="message" id="message" rows="5" placeholder="Message"></textarea>
+                                    <label class="sr-only" for="contactMessage">Message</label>
+                                    <textarea class="form-control" name="contactMessage" id="contactMessage" rows="5" placeholder="Message"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary" name="contact">Submit</button>
+                                <button type="submit" class="btn btn-primary" name="contactForm">Submit</button>
                                 <!-- Validation Response -->
                                 <div class="response-holder"></div>
                             </form>

@@ -1,5 +1,5 @@
 <!--Login Modal-->
-<div class="light-skin modal fade" id="loginModal" tabindex="-1" role="form" aria-hidden="true">
+<div class="light-skin modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -7,7 +7,7 @@
                 <h4 class="modal-title">{trans s="str_menu_btn_login"}</h4>
             </div>
             <div class="modal-body">
-                <form method="post" class="login-form" role="form" action="{$form}">
+                <form method="post" class="login-form" action="{$form}">
                     <div class="form-group">
                         <label for="login">{trans s="str_form_email"}</label>
                         <input type="text" class="form-control" id="login" name="login" placeholder="{trans s='str_form_email_ph'}" required>

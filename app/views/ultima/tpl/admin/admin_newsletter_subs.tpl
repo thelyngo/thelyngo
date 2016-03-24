@@ -1,4 +1,4 @@
-    <!--HEADER-->
+    <!--THELYNGO TOP-->
     {include file="header.tpl"}
 
     <!--LOGIN AREA-->

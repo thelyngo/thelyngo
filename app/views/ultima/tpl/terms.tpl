@@ -1,4 +1,4 @@
-    <!--HEADER-->
+    <!--THELYNGO TOP-->
     {include file="header.tpl"}
 
     <!--LOGIN AREA-->
@@ -6,6 +6,12 @@
 
     <!--MENU-->
     {include file="menu.tpl"}
+
+    <div class="row">
+        <div class="col-sm-8">
+            {include file="alert.tpl"}
+        </div>
+    </div>
 
     <div class="container">
         <div class="row">

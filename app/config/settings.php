@@ -4,7 +4,7 @@
     app configuration
 */
 define('_APP_MAINTENANCE_',         false);
-define('_APP_ENV_',                 1); // 1: DEV, 2: PREPROD, 3: PROD
+define('_APP_ENV_',                 3); // 1: DEV, 2: PREPROD, 3: PROD
 define('_APP_NAME_',                'TheLyngo');
 define('_APP_DEFAULT_LANG_',        'fr'); //fr, en, es etc.
 
